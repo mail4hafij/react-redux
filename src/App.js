@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // importing Components.
 import TodoList from './components/TodoList';
 import Counter from './components/Counter';
+import Footer from './components/Footer';
 
 
 function App () {
@@ -42,11 +43,12 @@ function App () {
 
   if(isLoggedIn) {
     return (
-      <div>
-        <button onClick={logoutHandler}>Logout</button>
-        <TodoList />
-        <Counter />
-      </div>
+        <div>
+          <button onClick={logoutHandler}>Logout</button>
+          <TodoList />
+          <Counter />
+          <Footer />
+        </div>
     );
   } else {
     return (
@@ -56,5 +58,7 @@ function App () {
     )
   }
 }
+
+
 
 export default App;
