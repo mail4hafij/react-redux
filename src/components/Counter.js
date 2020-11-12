@@ -13,7 +13,7 @@ function Counter() {
   const SAVED_COUNTER = "saved_counter";
 
 
-  // #region useEffect 
+  
   // useEffect gives us the opportunity to react to changes on objects. 
   useEffect(() => {
     const savedCounter = JSON.parse(localStorage.getItem(SAVED_COUNTER));
@@ -25,13 +25,13 @@ function Counter() {
   useEffect(() => {
     localStorage.setItem(SAVED_COUNTER, JSON.stringify(counter));
   }, [counter]); // Runs evertime when values are changed.
-  // #endregion
-
+  
+  
 
   return (
     <div>
       <h2>COUNTER application using redux!</h2>
-      <input value={counter} type="text" />
+      <input value={counter} type="text" readOnly />
       <button onClick={() => dispatch(increment(3))}>INC</button>
       <button onClick={() => dispatch(decrement(3))}>DEC</button>
     </div>

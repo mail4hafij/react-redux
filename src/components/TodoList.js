@@ -15,7 +15,7 @@ function TodoList() {
   const todoRef = useRef();
 
 
-  // #region useEffect 
+  
   // useEffect gives us the opportunity to react to changes on objects. 
   useEffect(() => {
     const savedTodoList = JSON.parse(localStorage.getItem(SAVED_TODO_LIST));
@@ -27,10 +27,9 @@ function TodoList() {
   useEffect(() => {
     localStorage.setItem(SAVED_TODO_LIST, JSON.stringify(todoList));
   }, [todoList]); // Runs evertime when values are changed.
-  // #endregion
+  
 
 
-  // #region Handlers
   // Handlers
   function addTodoHandler(e) {
     const todo = todoRef.current.value;
@@ -41,24 +40,22 @@ function TodoList() {
       // Concate
       return [...elem, { id: uuid(), name: todo }]
     })
-
     todoRef.current.value = null;
   }
 
   function clearTodoListHandler(e) {
     setTodoList([]);
   }
-  // #endregion
 
 
-  // #region 
+
   // Functions to pass into components.
   function removeTodo(todoId) {
     // Remove a specific item.
     const copyTodoList = todoList.filter(todo => todo.id !== todoId);
     setTodoList(copyTodoList);
   }
-  // #endregion
+
 
 
   return (
@@ -74,7 +71,7 @@ function TodoList() {
           )
         })
       }
-      <input ref={todoRef} type="text"></input>
+      <input ref={todoRef} type="text" />
       <button onClick={addTodoHandler}>Add</button>
       <button onClick={clearTodoListHandler}>Clear</button>
     </div>

@@ -13,7 +13,7 @@ function App () {
   const IS_LOGGED_IN = "is_logged_in";
 
 
-  // #region useEffect
+
   // useEffect gives us the opportunity to react to changes on objects. 
   useEffect(() => {
     const wasLoggedIn = JSON.parse(localStorage.getItem(IS_LOGGED_IN));
@@ -25,10 +25,9 @@ function App () {
   useEffect(() => {
     localStorage.setItem(IS_LOGGED_IN, JSON.stringify(isLoggedIn)); 
   }, [isLoggedIn]); // Runs evertime when values are changed.
-  // #endregion
+  
 
 
-  // #region Handlers
   // Handlers
   function loginHandler (e) {
     setLoggedIn(true);
@@ -37,7 +36,6 @@ function App () {
   function logoutHandler (e) {
     setLoggedIn(false);
   }
-  // #endregion
   
 
 
@@ -58,7 +56,6 @@ function App () {
     )
   }
 }
-
 
 
 export default App;
