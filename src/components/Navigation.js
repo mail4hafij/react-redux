@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
-function Footer() {
+function Navigation() {
   return (
     <Router>
       
@@ -26,19 +26,19 @@ function Footer() {
 // Help component.
 function Help() {
   return (
-    <h3>
+    <h4>
       This is help page.
-    </h3>
+    </h4>
   )
 }
 // About component.
 function About() {
   return (
-    <h3>
+    <h4>
       This is about page.
-    </h3>
+    </h4>
   )
 }
 
 
-export default Footer;
+export default Navigation;

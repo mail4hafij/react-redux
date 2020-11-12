@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 // importing Components.
 import TodoList from './components/TodoList';
 import Counter from './components/Counter';
-import Footer from './components/Footer';
+import Navigation from './components/Navigation';
+import SomeList from './components/SomeList';
 
 
 function App () {
@@ -45,7 +46,8 @@ function App () {
           <button onClick={logoutHandler}>Logout</button>
           <TodoList />
           <Counter />
-          <Footer />
+          <Navigation />
+          <SomeList />
         </div>
     );
   } else {
