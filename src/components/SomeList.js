@@ -55,17 +55,16 @@ function SomeList() {
   */
 
 
-  async function someDataByAsync() {
-    let listOne = await someDataByPromise();
-    let listTwo = await someOtherDataByPromise();
-    let data = listOne.concat(listTwo);
-    setMyList(data);
-  }
-
-
   
   useEffect(() => {
-    someDataByAsync();    
+    async function someDataByAsync() {
+      const listOne = await someDataByPromise();
+      const listTwo = await someOtherDataByPromise();
+      setMyList(listOne.concat(listTwo));
+    }
+
+    someDataByAsync();
+  
   }, []); // Only runs when the page loads.
   
   
