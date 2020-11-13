@@ -5,6 +5,8 @@ import { v4 as uuid } from "uuid";
 function SomeList() {
   // useState gives us the opportunity to maintain state.
   const [myList, setMyList] = useState([]);
+  const [loadMore, setLoadMore] = useState(true);
+  
   
   /*
   function someData(callBackData) {
@@ -20,13 +22,12 @@ function SomeList() {
   })
   */
 
-  
   function someDataByPromise() {
     // returns a promise
     return new Promise((resolve, rejected) => {
       setTimeout(()=> {
         resolve(["three", "four"]);
-      }, 3000);
+      }, 2000);
     });
   }  
   /*
@@ -37,45 +38,45 @@ function SomeList() {
   });
   */
   
-
-  function someOtherDataByPromise() {
+ function someMoreDataByPromise() {
     // returns a promise
     return new Promise((resolve, rejected) => {
       setTimeout(()=> {
         resolve(["five", "six"]);
-      }, 4000);
+      }, 2000);
     });
   }
-  /*
-  someOtherDataByPromise().then((list) => {
-    list.map(item => {
-      console.log(item);
-    });
-  });
-  */
 
-
+  
   
   useEffect(() => {
     async function someDataByAsync() {
-      const listOne = await someDataByPromise();
-      const listTwo = await someOtherDataByPromise();
-      setMyList(listOne.concat(listTwo));
+      setMyList(await someDataByPromise());
     }
-
     someDataByAsync();
-  
   }, []); // Only runs when the page loads.
   
   
+  // Handler
+  async function loadMoreHandler() {
+    setMyList(myList.concat(await someMoreDataByPromise()));
+    setLoadMore(false);
+  }
+
 
   if(!myList.length) {
     return (
       <div>
+        <h2>Async call example using useEffect!</h2>
         loading...
       </div>
     )
   } else {
+    let button = "";
+    if(loadMore) {
+      button = <button onClick={loadMoreHandler}>Load more</button>
+    }
+
     return (
       <div>
         <h2>Async call example using useEffect!</h2>
@@ -86,6 +87,7 @@ function SomeList() {
             )
           })
         }
+        {button}    
       </div>
     )
   }

@@ -4,6 +4,8 @@ import TodoList from './components/TodoList';
 import Counter from './components/Counter';
 import Navigation from './components/Navigation';
 import SomeList from './components/SomeList';
+import SomeInput from './components/SomeInput';
+
 
 
 function App () {
@@ -48,6 +50,7 @@ function App () {
           <Counter />
           <Navigation />
           <SomeList />
+          <SomeInput />
         </div>
     );
   } else {
