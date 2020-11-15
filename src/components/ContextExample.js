@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 // importing custom hooks.
 import { useTheme, useUpdateTheme } from '../hooks/ThemeContext';
 
