@@ -5,17 +5,18 @@ import Counter from './components/Counter';
 import Navigation from './components/Navigation';
 import SomeList from './components/SomeList';
 import SomeInput from './components/SomeInput';
+import ContextExample from './components/ContextExample';
+// importing custom hooks
+import { ThemeProvider } from './hooks/ThemeContext';
 
 
-
-function App () {
+export default function App () {
   // useState gives us the opportunity to maintain state.
   const [isLoggedIn, setLoggedIn] = useState(false);
-
   // keys to store in localStorage
   const IS_LOGGED_IN = "is_logged_in";
-
-
+  
+  
 
   // useEffect gives us the opportunity to react to changes on objects. 
   useEffect(() => {
@@ -42,6 +43,7 @@ function App () {
   
 
 
+
   if(isLoggedIn) {
     return (
         <div>
@@ -51,6 +53,9 @@ function App () {
           <Navigation />
           <SomeList />
           <SomeInput />
+          <ThemeProvider>
+            <ContextExample />
+          </ThemeProvider>
         </div>
     );
   } else {
@@ -61,6 +66,3 @@ function App () {
     )
   }
 }
-
-
-export default App;

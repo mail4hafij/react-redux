@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 
-function useLocalStorage(key, initValue) {
+export default function useLocalStorage(key, initValue) {
   const [value, updateValue] = useState(initValue);
   
 
@@ -21,5 +21,3 @@ function useLocalStorage(key, initValue) {
   return [value, updateValue];
 
 }
-
-export default useLocalStorage;

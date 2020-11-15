@@ -1,7 +1,8 @@
 import React from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 
-function SomeInput() {
+
+export default function SomeInput() {
   const [value, updateValue] = useLocalStorage("SomeInput", "");
 
 
@@ -18,5 +19,3 @@ function SomeInput() {
     </div>
   )
 }
-
-export default SomeInput;

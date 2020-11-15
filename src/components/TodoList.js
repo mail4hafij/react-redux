@@ -4,7 +4,7 @@ import { v4 as uuid } from "uuid";
 import Todo from './Todo';
 
 
-function TodoList() {
+export default function TodoList() {
   // useState gives us the opportunity to maintain state.
   const [todoList, setTodoList] = useState([]);
 
@@ -77,5 +77,3 @@ function TodoList() {
     </div>
   )
 }
-
-export default TodoList;

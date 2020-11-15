@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from "uuid";
 
 
-function SomeList() {
+export default function SomeList() {
   // useState gives us the opportunity to maintain state.
   const [myList, setMyList] = useState([]);
   const [loadMore, setLoadMore] = useState(true);
@@ -92,5 +92,3 @@ function SomeList() {
     )
   }
 }
-
-export default SomeList;

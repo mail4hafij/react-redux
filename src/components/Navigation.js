@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
-function Navigation() {
+export default function Navigation() {
   return (
     <Router>
       
@@ -39,6 +39,3 @@ function About() {
     </h4>
   )
 }
-
-
-export default Navigation;

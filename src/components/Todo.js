@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Todo({ todo, removeTodo }) {
+
+export default function Todo({ todo, removeTodo }) {
 
   function removeHandler(e) {
     removeTodo(todo.id);
@@ -15,5 +16,3 @@ function Todo({ todo, removeTodo }) {
     </div>
   )
 }
-
-export default Todo;

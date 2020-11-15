@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement, setcounter } from '../actions';
 
 
-function Counter() {
+export default function Counter() {
   // useSelector gives us the opportunity to access redux state.
   const counter = useSelector(state => state.counter);
   // useDispatch allows us to perform an action (sends action to reducer).
@@ -37,5 +37,3 @@ function Counter() {
     </div>
   )
 }
-
-export default Counter;
