@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from "uuid";
 
 
-export default function SomeList() {
+export default function AsyncExample() {
   // useState gives us the opportunity to maintain state.
   const [myList, setMyList] = useState([]);
   const [loadMore, setLoadMore] = useState(true);

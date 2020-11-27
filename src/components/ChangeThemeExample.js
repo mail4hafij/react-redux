@@ -3,7 +3,7 @@ import React from 'react';
 import { useTheme, useUpdateTheme } from '../hooks/ThemeContext';
 
 
-export default function ContextExample() {
+export default function ChangeThemeExample() {
   const dark = useTheme();
   const changeThemeHandler = useUpdateTheme();
 

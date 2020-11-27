@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 // importing Components.
-import TodoList from './components/TodoList';
-import Counter from './components/Counter';
-import Navigation from './components/Navigation';
-import SomeList from './components/SomeList';
-import SomeInput from './components/SomeInput';
-import ContextExample from './components/ContextExample';
+import TodoListExample from './components/TodoListExample';
+import CounterExample from './components/CounterExample';
+import RouterExample from './components/RouterExample';
+import AsyncExample from './components/AsyncExample';
+import CustomHookExample from './components/CustomHookExample';
+import ChangeThemeExample from './components/ChangeThemeExample';
 // importing custom hooks
 import { ThemeProvider } from './hooks/ThemeContext';
 
@@ -48,13 +48,13 @@ export default function App () {
     return (
         <div>
           <button onClick={logoutHandler}>Logout</button>
-          <TodoList />
-          <Counter />
-          <Navigation />
-          <SomeList />
-          <SomeInput />
+          <TodoListExample />
+          <CounterExample />
+          <RouterExample />
+          <AsyncExample />
+          <CustomHookExample />
           <ThemeProvider>
-            <ContextExample />
+            <ChangeThemeExample />
           </ThemeProvider>
         </div>
     );

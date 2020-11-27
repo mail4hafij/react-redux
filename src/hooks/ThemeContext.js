@@ -4,13 +4,17 @@ import React, { useState, useContext } from 'react';
 export const ThemeContext = React.createContext();
 export const ThemeUpdateContext = React.createContext();
 
-// Custom hooks 1 (used by ContentExample)
+// Custom hooks 1 (used by ChangeThemeExample)
 export function useTheme() {
+  // useContext gives us the opportunity to get the 
+  // value from a react context (i.e., ThemeContext)
   return useContext(ThemeContext);
 }
 
-// Custom hooks 2 (used by ContextExample)
+// Custom hooks 2 (used by ChangeThemeExample)
 export function useUpdateTheme() {
+  // useContext gives us the opportunity to get the 
+  // value from a react context (i.e., ThemeUpdateContext)
   return useContext(ThemeUpdateContext);
 }
 

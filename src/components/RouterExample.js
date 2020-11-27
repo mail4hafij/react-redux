@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
-export default function Navigation() {
+export default function RouterExample() {
   return (
     <Router>
       

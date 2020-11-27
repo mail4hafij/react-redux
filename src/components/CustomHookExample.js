@@ -2,7 +2,7 @@ import React from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 
-export default function SomeInput() {
+export default function CustomHookExample() {
   const [value, updateValue] = useLocalStorage("SomeInput", "");
 
 
@@ -12,7 +12,7 @@ export default function SomeInput() {
 
   return (
     <div>
-      <h2>Custom hooks example!</h2>
+      <h2>Custom hook example!</h2>
       <input 
         value={value}
         onChange={updateValueHandler} type="text"></input>
