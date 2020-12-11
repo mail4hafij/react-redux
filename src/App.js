@@ -1,68 +1,62 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 // importing Components.
-import TodoListExample from './components/TodoListExample';
-import CounterExample from './components/CounterExample';
-import RouterExample from './components/RouterExample';
-import AsyncExample from './components/AsyncExample';
-import CustomHookExample from './components/CustomHookExample';
-import ChangeThemeExample from './components/ChangeThemeExample';
+import TodoListExample from "./components/TodoListExample";
+import CounterExample from "./components/CounterExample";
+import RouterExample from "./components/RouterExample";
+import AsyncExample from "./components/AsyncExample";
+import CustomHookExample from "./components/CustomHookExample";
+import ChangeThemeExample from "./components/ChangeThemeExample";
+import FormSubmitExample from "./components/FormSubmitExample";
 // importing custom hooks
-import { ThemeProvider } from './hooks/ThemeContext';
+import { ThemeProvider } from "./hooks/ThemeContext";
 
-
-export default function App () {
+export default function App() {
   // useState gives us the opportunity to maintain state.
   const [isLoggedIn, setLoggedIn] = useState(false);
   // keys to store in localStorage
   const IS_LOGGED_IN = "is_logged_in";
-  
-  
 
-  // useEffect gives us the opportunity to react to changes on objects. 
+  // useEffect gives us the opportunity to react to changes on objects.
   useEffect(() => {
     const wasLoggedIn = JSON.parse(localStorage.getItem(IS_LOGGED_IN));
-    if(wasLoggedIn) {
+    if (wasLoggedIn) {
       setLoggedIn(wasLoggedIn);
     }
   }, []); // Only runs when the page loads.
 
   useEffect(() => {
-    localStorage.setItem(IS_LOGGED_IN, JSON.stringify(isLoggedIn)); 
+    localStorage.setItem(IS_LOGGED_IN, JSON.stringify(isLoggedIn));
   }, [isLoggedIn]); // Runs evertime when values are changed.
-  
-
 
   // Handlers
-  function loginHandler (e) {
+  function loginHandler(e) {
     setLoggedIn(true);
   }
 
-  function logoutHandler (e) {
+  function logoutHandler(e) {
     setLoggedIn(false);
   }
-  
 
-
-
-  if(isLoggedIn) {
+  if (isLoggedIn) {
     return (
-        <div>
-          <button onClick={logoutHandler}>Logout</button>
-          <TodoListExample />
-          <CounterExample />
-          <RouterExample />
-          <AsyncExample />
-          <CustomHookExample />
-          <ThemeProvider>
-            <ChangeThemeExample />
-          </ThemeProvider>
-        </div>
+      <div>
+        <button onClick={logoutHandler}>Logout</button>
+        <FormSubmitExample />
+        <TodoListExample />
+        <CounterExample />
+        <RouterExample />
+        <AsyncExample />
+        <CustomHookExample />
+        <ThemeProvider>
+          <ChangeThemeExample />
+        </ThemeProvider>
+      </div>
     );
   } else {
     return (
       <div>
         <button onClick={loginHandler}>Login</button>
       </div>
-    )
+    );
   }
 }
