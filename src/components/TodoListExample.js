@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 // importing Components.
-import Todo from './Todo';
-
+import Todo from "./Todo";
 
 export default function TodoListExample() {
   // useState gives us the opportunity to maintain state.
@@ -11,12 +10,10 @@ export default function TodoListExample() {
   // keys to store in localStorage
   const SAVED_TODO_LIST = "saved_todo_list";
 
-  // useRef gives us the opportunity to get or set value for an element.
+  // useRef gives us the opportunity to get or set value of an  HTML element.
   const todoRef = useRef();
 
-
-  
-  // useEffect gives us the opportunity to react to changes on objects. 
+  // useEffect gives us the opportunity to react to changes on objects.
   useEffect(() => {
     const savedTodoList = JSON.parse(localStorage.getItem(SAVED_TODO_LIST));
     if (savedTodoList) {
@@ -27,19 +24,16 @@ export default function TodoListExample() {
   useEffect(() => {
     localStorage.setItem(SAVED_TODO_LIST, JSON.stringify(todoList));
   }, [todoList]); // Runs evertime when values are changed.
-  
-
 
   // Handlers
   function addTodoHandler(e) {
     const todo = todoRef.current.value;
-    if (todo === '')
-      return
+    if (todo === "") return;
 
-    setTodoList(elem => {
+    setTodoList((elem) => {
       // Concate
-      return [...elem, { id: uuid(), name: todo }]
-    })
+      return [...elem, { id: uuid(), name: todo }];
+    });
     todoRef.current.value = null;
   }
 
@@ -47,33 +41,22 @@ export default function TodoListExample() {
     setTodoList([]);
   }
 
-
-
   // Functions to pass into components.
   function removeTodo(todoId) {
     // Remove a specific item.
-    const copyTodoList = todoList.filter(todo => todo.id !== todoId);
+    const copyTodoList = todoList.filter((todo) => todo.id !== todoId);
     setTodoList(copyTodoList);
   }
-
-
 
   return (
     <div>
       <h2>TODO application using useState!</h2>
-      {
-        todoList.map(todo => {
-          return (
-            <Todo
-              key={todo.id}
-              todo={todo}
-              removeTodo={removeTodo} />
-          )
-        })
-      }
+      {todoList.map((todo) => {
+        return <Todo key={todo.id} todo={todo} removeTodo={removeTodo} />;
+      })}
       <input ref={todoRef} type="text" />
       <button onClick={addTodoHandler}>Add</button>
       <button onClick={clearTodoListHandler}>Clear</button>
     </div>
-  )
+  );
 }

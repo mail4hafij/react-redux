@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+// importing custom hooks
+import { ThemeProvider } from "./hooks/ThemeContext";
+
 // importing Components.
 import TodoListExample from "./components/TodoListExample";
 import CounterExample from "./components/CounterExample";
@@ -7,8 +10,7 @@ import AsyncExample from "./components/AsyncExample";
 import CustomHookExample from "./components/CustomHookExample";
 import ChangeThemeExample from "./components/ChangeThemeExample";
 import FormSubmitExample from "./components/FormSubmitExample";
-// importing custom hooks
-import { ThemeProvider } from "./hooks/ThemeContext";
+import UseMemoExample from "./components/UseMemoExample";
 
 export default function App() {
   // useState gives us the opportunity to maintain state.
@@ -41,6 +43,7 @@ export default function App() {
     return (
       <div>
         <button onClick={logoutHandler}>Logout</button>
+        <UseMemoExample />
         <FormSubmitExample />
         <TodoListExample />
         <CounterExample />

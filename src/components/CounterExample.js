@@ -1,20 +1,17 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, setcounter } from '../reducers/actions';
-
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement, setcounter } from "../reducers/actions";
 
 export default function CounterExample() {
   // useSelector gives us the opportunity to access redux state.
-  const counter = useSelector(state => state.counter);
+  const counter = useSelector((state) => state.counter);
   // useDispatch allows us to perform an action (sends action to reducer).
   const dispatch = useDispatch();
 
   // keys to store in localStorage
   const SAVED_COUNTER = "saved_counter";
 
-
-  
-  // useEffect gives us the opportunity to react to changes on objects. 
+  // useEffect gives us the opportunity to react to changes on objects.
   useEffect(() => {
     const savedCounter = JSON.parse(localStorage.getItem(SAVED_COUNTER));
     if (savedCounter) {
@@ -25,8 +22,6 @@ export default function CounterExample() {
   useEffect(() => {
     localStorage.setItem(SAVED_COUNTER, JSON.stringify(counter));
   }, [counter]); // Runs evertime when values are changed.
-  
-  
 
   return (
     <div>
@@ -35,5 +30,5 @@ export default function CounterExample() {
       <button onClick={() => dispatch(increment(3))}>INC</button>
       <button onClick={() => dispatch(decrement(3))}>DEC</button>
     </div>
-  )
+  );
 }
