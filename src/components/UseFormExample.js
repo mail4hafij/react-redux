@@ -9,7 +9,7 @@ export default function UseFormExample() {
   };
   return (
     <div>
-      <h2>Form submit example using useForm!</h2>
+      <h2>useForm example!</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         Email <br />
         <input

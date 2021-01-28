@@ -2,7 +2,7 @@ import React from "react";
 // importing custom hooks.
 import { useGetTheme, useUpdateTheme } from "../hooks/UseThemeContext";
 
-export default function ChangeThemeExample() {
+export default function UseContextExample() {
   const dark = useGetTheme();
   const changeThemeHandler = useUpdateTheme();
 
@@ -15,7 +15,7 @@ export default function ChangeThemeExample() {
 
   return (
     <div style={themeStyle}>
-      <h2>UseContext example!</h2>
+      <h2>useContext example!</h2>
       <button onClick={changeThemeHandler}>Change theme</button>
     </div>
   );

@@ -73,7 +73,7 @@ export default function AsyncExample() {
 
     return (
       <div>
-        <h2>Async call example using useEffect!</h2>
+        <h2>ASYNC application using useEffect!</h2>
         {myList.map((item) => {
           return <ul key={uuid()}>{item}</ul>;
         })}

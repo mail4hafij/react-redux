@@ -8,7 +8,7 @@ import CounterExample from "./components/CounterExample";
 import RouterExample from "./components/RouterExample";
 import AsyncExample from "./components/AsyncExample";
 import CustomHookExample from "./components/CustomHookExample";
-import ChangeThemeExample from "./components/ChangeThemeExample";
+import UseContextExample from "./components/UseContextExample";
 import UseFormExample from "./components/UseFormExample";
 import UseMemoExample from "./components/UseMemoExample";
 
@@ -51,7 +51,7 @@ export default function App() {
         <AsyncExample />
         <CustomHookExample />
         <UseThemeProvider>
-          <ChangeThemeExample />
+          <UseContextExample />
         </UseThemeProvider>
       </div>
     );
