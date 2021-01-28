@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // importing custom hooks
-import { ThemeProvider } from "./hooks/ThemeContext";
+import { UseThemeProvider } from "./hooks/UseThemeContext";
 
 // importing Components.
 import TodoListExample from "./components/TodoListExample";
@@ -9,7 +9,7 @@ import RouterExample from "./components/RouterExample";
 import AsyncExample from "./components/AsyncExample";
 import CustomHookExample from "./components/CustomHookExample";
 import ChangeThemeExample from "./components/ChangeThemeExample";
-import FormSubmitExample from "./components/FormSubmitExample";
+import UseFormExample from "./components/UseFormExample";
 import UseMemoExample from "./components/UseMemoExample";
 
 export default function App() {
@@ -44,15 +44,15 @@ export default function App() {
       <div>
         <button onClick={logoutHandler}>Logout</button>
         <UseMemoExample />
-        <FormSubmitExample />
+        <UseFormExample />
         <TodoListExample />
         <CounterExample />
         <RouterExample />
         <AsyncExample />
         <CustomHookExample />
-        <ThemeProvider>
+        <UseThemeProvider>
           <ChangeThemeExample />
-        </ThemeProvider>
+        </UseThemeProvider>
       </div>
     );
   } else {

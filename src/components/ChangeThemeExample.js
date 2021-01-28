@@ -1,23 +1,22 @@
-import React from 'react';
+import React from "react";
 // importing custom hooks.
-import { useTheme, useUpdateTheme } from '../hooks/ThemeContext';
-
+import { useGetTheme, useUpdateTheme } from "../hooks/UseThemeContext";
 
 export default function ChangeThemeExample() {
-  const dark = useTheme();
+  const dark = useGetTheme();
   const changeThemeHandler = useUpdateTheme();
 
   const themeStyle = {
-    backgroundColor: dark ? '#333' :  '#EEE',
-    color: dark ? '#EEE' : '#333',
-    padding: '20px 20px 20px 20px',
-    margin: '20px 20px 20px 0px'
-  }
-  
+    backgroundColor: dark ? "#333" : "#EEE",
+    color: dark ? "#EEE" : "#333",
+    padding: "20px 20px 20px 20px",
+    margin: "20px 20px 20px 0px",
+  };
+
   return (
     <div style={themeStyle}>
       <h2>UseContext example!</h2>
       <button onClick={changeThemeHandler}>Change theme</button>
     </div>
-  )
+  );
 }

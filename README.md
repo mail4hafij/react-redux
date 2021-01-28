@@ -5,4 +5,6 @@ The idea here is to setup a very basic react application for absolute beginners.
 1. React - useState, useEffect, useMemo, useRef, useForm, useContext, router, async calls, custom hooks, etc.
 2. Redux - Store, Reducers, Actions, Dispatch.
 
+`npm start`
+
 <img src="Application.jpg" />
