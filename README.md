@@ -6,6 +6,6 @@ The idea here is to setup a very basic react application for absolute beginners.
 2. Redux - Store, Reducers, Actions, Dispatch.
 
 Install all the node packages `npm install`
-And run the app `npm start`
+and run the app `npm start`
 
 <img src="Application.jpg" />
