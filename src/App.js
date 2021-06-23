@@ -11,6 +11,7 @@ import CustomHookExample from "./components/CustomHookExample";
 import UseContextExample from "./components/UseContextExample";
 import UseFormExample from "./components/UseFormExample";
 import UseMemoExample from "./components/UseMemoExample";
+import RenderExample from "./components/RenderExample";
 
 export default function App() {
   // useState gives us the opportunity to maintain state.
@@ -58,6 +59,7 @@ export default function App() {
   } else {
     return (
       <div>
+        <RenderExample />
         <button onClick={loginHandler}>Login</button>
       </div>
     );
