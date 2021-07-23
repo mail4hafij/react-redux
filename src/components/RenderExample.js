@@ -4,7 +4,7 @@ export default function RenderExample() {
   const [count, setCount] = useState(0);
   const [anotherCount, setAnotherCount] = useState(0);
 
-  // Will cause infitie render - since the state is changed everytime the component gets rendered
+  // Will cause infitie render - since the component gets rendered everytime a state is changed
   // setCount(count + 1);
 
   useEffect(() => {
