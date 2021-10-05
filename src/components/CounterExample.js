@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement, setcounter } from "../reducers/actions";
+import { increment, decrement, setcounter } from "../redux/actions";
 
 export default function CounterExample() {
   // useSelector gives us the opportunity to access redux state.

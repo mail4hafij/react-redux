@@ -49,8 +49,12 @@ export function ChildElement1({ prop, pass }) {
   console.log("\trendering child 1");
   return (
     <>
-      {prop}
-      <button onClick={inTheChildElement}>Test</button>
+      <h2>Rendering example</h2>
+      <p>
+        Open console to see in which sequence the components are rendered and
+        re-renderd <button onClick={inTheChildElement}>Test</button>
+      </p>
+      <h3>{prop}</h3>
     </>
   );
 }

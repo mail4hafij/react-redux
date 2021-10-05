@@ -1,14 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import {createStore} from 'redux';
-import {Provider} from 'react-redux';
-import allReducers from './reducers'; 
-
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import allReducers from "./redux";
 
 // Store - The global state.
-const store = createStore(allReducers, 
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 // Aciton - The name of an action.
 // Checkout the actions.js file.
@@ -19,10 +20,13 @@ const store = createStore(allReducers,
 // Dispatch - Sends Action to Reducer.
 // Checkout the Counter.js component.
 
-// Subscribe - 
+// Subscribe -
 // Not used.
 
-
 // Attaching store to our App.
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
-
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
