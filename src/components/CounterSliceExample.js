@@ -1,34 +1,34 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement, setcounter } from "../redux/actions";
+import { inc, dec, set } from "../redux/counterSlice";
 
-export default function CounterExample() {
+export default function CounterSliceExample() {
   // useSelector gives us the opportunity to access redux state.
-  const counter = useSelector((state) => state.counterReducer);
+  const counter = useSelector((state) => state.counterSlice.count);
   // useDispatch allows us to perform an action (sends action to reducer).
   const dispatch = useDispatch();
 
   // keys to store in localStorage
-  const SAVED_COUNTER = "saved_counter";
+  const SAVED_COUNTER_SLICE = "saved_counter_slice";
 
   // useEffect gives us the opportunity to react to changes on objects.
   useEffect(() => {
-    const savedCounter = JSON.parse(localStorage.getItem(SAVED_COUNTER));
+    const savedCounter = JSON.parse(localStorage.getItem(SAVED_COUNTER_SLICE));
     if (savedCounter) {
-      dispatch(setcounter(savedCounter));
+      dispatch(set(savedCounter));
     }
   }, []); // Only runs when the page loads.
 
   useEffect(() => {
-    localStorage.setItem(SAVED_COUNTER, JSON.stringify(counter));
+    localStorage.setItem(SAVED_COUNTER_SLICE, JSON.stringify(counter));
   }, [counter]); // Runs evertime when values are changed.
 
   return (
     <div>
-      <h2>COUNTER application using redux!</h2>
+      <h2>COUNTER application using redux toolkit!</h2>
       <input value={counter} type="text" readOnly />
-      <button onClick={() => dispatch(increment(3))}>INC</button>
-      <button onClick={() => dispatch(decrement(3))}>DEC</button>
+      <button onClick={() => dispatch(inc(3))}>INC</button>
+      <button onClick={() => dispatch(dec(3))}>DEC</button>
     </div>
   );
 }

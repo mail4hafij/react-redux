@@ -17,6 +17,7 @@ export default function UseMemoExample() {
   // useCallback is very similar to useMemo which gives us
   // the opportunity to momoize but it returns a function not a value.
   const doubleNumber = useMemo(() => {
+    console.log("Inside the usememo");
     return getDoubleNumber(number);
   }, [number]);
 

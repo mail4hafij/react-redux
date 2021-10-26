@@ -5,6 +5,7 @@ import { UseThemeProvider } from "./hooks/UseThemeContext";
 // importing Components.
 import TodoListExample from "./components/TodoListExample";
 import CounterExample from "./components/CounterExample";
+import CounterSliceExample from "./components/CounterSliceExample";
 import RouterExample from "./components/RouterExample";
 import AsyncExample from "./components/AsyncExample";
 import CustomHookExample from "./components/CustomHookExample";
@@ -48,6 +49,7 @@ export default function App() {
         <UseFormExample />
         <TodoListExample />
         <CounterExample />
+        <CounterSliceExample />
         <RouterExample />
         <AsyncExample />
         <CustomHookExample />
